@@ -8,6 +8,7 @@ import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import lord_vader from "../assets/static/img/darki.jpg";
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -70,6 +71,7 @@ export const CreativeCard = React.memo(function BlogCard(props) {
 
   const styles = useStyles();
   const {
+    // eslint-disable-next-line no-unused-vars
     button: buttonStyles,
     ...contentStyles
   } = useBlogTextInfoContentStyles();
@@ -92,5 +94,13 @@ export const CreativeCard = React.memo(function BlogCard(props) {
     </Card>
   );
 });
+
+CreativeCard.propTypes = {
+  item: PropTypes.shape({
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default CreativeCard

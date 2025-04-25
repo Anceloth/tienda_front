@@ -2,7 +2,7 @@ import React from "react";
 
 import lord_vader from "../assets/static/img/darki.jpg";
 
-const NotFound = (props) => {
+const NotFound = () => {
   return (
     <div className="container">
       <div className="row main__orders d-flex align-items-center">
