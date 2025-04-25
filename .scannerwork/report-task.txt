@@ -1,0 +1,6 @@
+projectKey=tienda_front_01
+serverUrl=http://localhost:9000
+serverVersion=25.4.0.105899
+dashboardUrl=http://localhost:9000/dashboard?id=tienda_front_01
+ceTaskId=b3ab95e7-fefb-4b29-b085-d7ef2371d902
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b3ab95e7-fefb-4b29-b085-d7ef2371d902

@@ -2,14 +2,9 @@ import axios from 'axios';
 
 const urlTienda = "http://localhost:3030/graphql";
 
-const headers = new Headers({
-    "Content-Type": "application/json",
-    Accept: "application/json"
-});
-
 const tienda = {
   orders: {
-    getOrder: async (payload) => {
+    getOrder: async () => {
         throw new Error("Method not implemented");
     },
     

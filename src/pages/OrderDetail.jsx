@@ -1,7 +1,7 @@
 
 import CreativeCard from '../components/CreativeCard';
 import { Grid } from "@material-ui/core";
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from '../context/Store';
 import tienda from '../api/tiendaMia';
 import TextField from '@mui/material/TextField';
@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 
 let dtFormat = new Intl.DateTimeFormat('default');
 
-const OrderDetail = (props) => {
+const OrderDetail = () => {
     const [state, dispatch] = useContext(Context);
     let order = state.selectedOrder || "";
     let items = state.items;
@@ -25,7 +25,6 @@ const OrderDetail = (props) => {
         }
     };
       loadItems(order);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     return (

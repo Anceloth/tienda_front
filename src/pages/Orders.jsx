@@ -4,7 +4,7 @@ import { Box, Grid } from "@material-ui/core";
 import { DataGrid } from '@mui/x-data-grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { useContext, useEffect } from 'react';
-import { Context } from '../context/Store';
+import React, { Context } from '../context/Store';
 import tienda from '../api/tiendaMia';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
@@ -71,7 +71,7 @@ const columns = [
   },
 ];
 
-const Orders = (props) => {
+const Orders = () => {
     const [state, dispatch] = useContext(Context);
     const history = useHistory();
 
@@ -80,10 +80,17 @@ const Orders = (props) => {
     const getDetails = (e) =>{
       console.log("Getting details E: ", e.row);
       dispatch({type:'SET_ORDER',payload: { order: e.row}});
+      
+      /* 
+       * We can change this way to pass the order to the next page
+       * using instead OrderDetail as child component and passing the order as props
+       * by props
+       */
       history.push({
         pathname: `/detail`,
-        state:{order: e.row}
+        // state:{order: e.row}
       });
+      
     }
 
     const classes = useStyles();
@@ -106,7 +113,6 @@ const Orders = (props) => {
       loadOrders("");
       
     }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     , []);
     
     const orderList = state.filterList;

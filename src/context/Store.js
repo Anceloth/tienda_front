@@ -1,6 +1,7 @@
 import React, {createContext, useReducer} from "react";
 import Reducer from './Reducer'
 
+import PropTypes from "prop-types";
 
 const initialState = {
     orderList: [],
@@ -23,3 +24,7 @@ const Store = ({children}) => {
 
 export const Context = createContext(initialState);
 export default Store;
+
+Store.propTypes = {
+    children: PropTypes.any.isRequired,
+};
